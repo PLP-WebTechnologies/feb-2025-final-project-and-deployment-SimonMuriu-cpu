@@ -1,0 +1,399 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    min-height: 100vh;
+}
+header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2a7ae2;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+.logo:hover {
+    color: #174ea6;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+.nav-links li a.active,
+.nav-links li a:hover {
+    color: #2a7ae2;
+}
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.hero {
+    background: linear-gradient(120deg, #2a7ae2 0%, #6ec6ff 100%);
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem 3rem 2rem;
+    animation: fadeInDown 1s ease;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+.cta-btn {
+    background: #fff;
+    color: #2a7ae2;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(42,122,226,0.1);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+.cta-btn:hover {
+    background: #2a7ae2;
+    color: #fff;
+    transform: scale(1.05);
+}
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+.feature-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    flex: 1 1 250px;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+.feature-card h2 {
+    color: #2a7ae2;
+    margin-bottom: 0.7rem;
+}
+.feature-card p {
+    color: #555;
+}
+.feature-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s, transform 0.7s;
+}
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 800px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Products Page */
+.products-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+.products-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 1.5rem 1rem 2rem 1rem;
+    min-width: 220px;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+    position: relative;
+}
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+.product-card h2 {
+    color: #2a7ae2;
+    margin-bottom: 0.5rem;
+}
+.product-card p {
+    color: #555;
+    margin-bottom: 0.7rem;
+}
+.product-card .price {
+    display: block;
+    font-weight: bold;
+    color: #174ea6;
+    margin-bottom: 1rem;
+}
+.buy-btn {
+    background: #2a7ae2;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+.buy-btn:hover {
+    background: #174ea6;
+    transform: scale(1.07);
+}
+.product-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(42,122,226,0.13);
+}
+.product-card:hover img {
+    transform: scale(1.05) rotate(-2deg);
+}
+.product-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+/* About Page */
+.about-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+.about-section h1 {
+    margin-bottom: 1rem;
+}
+.about-section p {
+    margin-bottom: 2rem;
+    color: #444;
+}
+.about-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.about-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    min-width: 220px;
+    max-width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+.about-card h2 {
+    color: #2a7ae2;
+    margin-bottom: 0.7rem;
+}
+.about-card p {
+    color: #555;
+}
+.about-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s, transform 0.7s;
+}
+.about-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(42,122,226,0.13);
+}
+
+/* Blog Page */
+.blog-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+.blog-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.blog-post {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+    cursor: pointer;
+}
+.blog-post h2 {
+    color: #2a7ae2;
+    margin-bottom: 0.5rem;
+}
+.blog-date {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.blog-post p {
+    color: #555;
+}
+.blog-post.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s, transform 0.7s;
+}
+.blog-post:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(42,122,226,0.13);
+}
+
+/* Testimonials Page */
+.testimonials-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+.testimonials-section h1 {
+    margin-bottom: 2rem;
+}
+.testimonials-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.testimonial-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    min-width: 220px;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+.testimonial-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #2a7ae2;
+    transition: transform 0.3s;
+}
+.testimonial-card h2 {
+    color: #2a7ae2;
+    margin-bottom: 0.5rem;
+}
+.testimonial-card p {
+    color: #555;
+    font-style: italic;
+}
+.testimonial-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s, transform 0.7s;
+}
+.testimonial-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(42,122,226,0.13);
+}
+.testimonial-card:hover img {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+@media (max-width: 800px) {
+    .product-grid, .about-cards, .testimonials-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+} 

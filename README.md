@@ -23,3 +23,13 @@ Use at least 5 different HTML elements.
 Ensure semantic correctness.
 
 Good luck and happy coding! 🚀💻
+
+## Web structure
+blog-site/
+├── index.html
+├── about.html
+├── blog.html
+├── products.html
+├── testimonials.html
+├── style.css
+└── script.js
