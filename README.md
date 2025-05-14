@@ -25,11 +25,15 @@ Ensure semantic correctness.
 Good luck and happy coding! 🚀💻
 
 ## Web structure
-blog-site/
+ecommerce-site/
 ├── index.html
 ├── about.html
 ├── blog.html
 ├── products.html
 ├── testimonials.html
 ├── style.css
-└── script.js
+├── script.js
+└── README.md
+
+## Deployment link (GitHub Pages)
+https://plp-webtechnologies.github.io/feb-2025-final-project-and-deployment-SimonMuriu-cpu/
